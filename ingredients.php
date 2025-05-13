@@ -15,7 +15,7 @@ if (isset($_GET['message'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingredients</title>
+    <title>Warung MJS - Bahan Makanan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -29,7 +29,7 @@ if (isset($_GET['message'])) {
 </head>
 <body class="bg-gray-100 min-h-screen">
     <header class="bg-white shadow-md">
-        <nav class="container mx-auto p-4">
+        <nav class="container mx-auto p-4 flex items-center justify-between">
             <ul class="flex space-x-4">
                 <li>
                     <a href="index.php" class="text-gray-700 hover:text-blue-600 font-semibold">Beranda</a>
@@ -63,21 +63,21 @@ if (isset($_GET['message'])) {
             <div class="mb-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
                 <h2 class="text-xl font-semibold text-gray-700 mb-4">Tambah Pembelian Bahan Makanan</h2>
                 <form method="post" action="backend/ingredients_data.php" class="space-y-4">
-                    <div class="soace-y-2">
+                    <div class="space-y-2">
                         <label for="name" class="block text-gray-700 text-sm font-bold mb-1">Nama:</label>
                         <input type="text" name="name" id="name" placeholder="Nama" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     </div>
                     <div class="space-y-2">
                         <label for="quantity" class="block text-gray-700 text-sm font-bold mb-1">Kuantitas:</label>
-                        <input type="number" name="quantity" id="quantity" placeholder="Kuantitas" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <input type="number" name="quantity" id="quantity" placeholder="Kuantitas" required step="0.01" inputmode="decimal" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     </div>
                     <div class="space-y-2">
                         <label for="price_per_unit" class="block text-gray-700 text-sm font-bold mb-1">Harga per Unit:</label>
-                        <input type="number" name="price_per_unit" id="price_per_unit" placeholder="Harga per kg/g/liter" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <input type="number" name="price_per_unit" id="price_per_unit" placeholder="Harga per kg/g/liter" required step="0.01" inputmode="decimal" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     </div>
                     <div class="space-y-2">
                         <label for="discount" class="block text-gray-700 text-sm font-bold mb-1">Diskon:</label>
-                        <input type="number" name="discount" id="discount" value="0" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <input type="number" name="discount" id="discount" value="0" step="0.01" inputmode="decimal" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     </div>
                     <div class="space-y-2">
                         <label for="notes" class="block text-gray-700 text-sm font-bold mb-1">Catatan:</label>
@@ -99,7 +99,7 @@ if (isset($_GET['message'])) {
     </main>
 
     <footer class="bg-white mt-8 py-4 text-center text-gray-500">
-        &copy; 2025 My Simple Website
+        &copy; 2025 Warung MJS
     </footer>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
